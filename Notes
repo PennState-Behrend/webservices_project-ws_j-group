@@ -1,0 +1,11 @@
+# Features
+
+## Sidebar
+1. Dashboard
+  - Brings to index.html where your uploaded projects are
+2. Settings
+  - Brings to settings.html where you can change your profile settings
+3. Sign out
+  - Logs the user out of their account and brings up login.html
+
+## Next Feature
