@@ -87,3 +87,7 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+#sidebar.d-flex flex-column flex-shrink-0 p-3 text-white bg-dark {
+
+}
