@@ -91,3 +91,45 @@ main {
 #sidebar.d-flex flex-column flex-shrink-0 p-3 text-white bg-dark {
 
 }
+
+#sidebar {
+  height: 100vh;
+  position: absolute;
+  left: -280px;
+}
+
+#check {
+  display: none;
+}
+
+.btn_one a {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  left: 16px;
+  cursor: pointer;
+  opacity: 1;
+  transition: left 300ms ease-in;
+}
+
+#sidebar .btn_two a {
+  font-size: 30px;
+  position: absolute;
+  left: 230px;
+  cursor: pointer;
+  opacity: 0;
+  transition: left 300ms ease-in;
+}
+
+#check:checked ~#sidebar {
+  left: 0px;
+}
+
+#check:checked ~ .btn_one a {
+  opacity: 0;
+}
+
+#check:checked ~ #sidebar .btn_two a {
+  opacity: 1;
+}
