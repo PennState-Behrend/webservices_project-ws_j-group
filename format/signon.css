@@ -38,6 +38,17 @@ body {
     border-top-right-radius: 0;
 }
 
-#suBtn {
-    margin-top: 2px;
+.signup {
+    left: 1px;
+    font-size: 20px;
+    margin-top: 0.2em;
+    padding: 8px 113px;
+    white-space: nowrap;
+    border-radius: 8px;
+    border: 2px solid #cfcfcf;
+    background-color: white;
+    color: black;
+}
+.signup:hover {
+    background-color: #cfcfcf;
 }
