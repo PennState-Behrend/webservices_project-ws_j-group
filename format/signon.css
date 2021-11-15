@@ -37,3 +37,18 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.signup {
+    left: 1px;
+    font-size: 20px;
+    margin-top: 0.2em;
+    padding: 8px 113px;
+    white-space: nowrap;
+    border-radius: 8px;
+    border: 2px solid #cfcfcf;
+    background-color: white;
+    color: black;
+}
+.signup:hover {
+    background-color: #cfcfcf;
+}

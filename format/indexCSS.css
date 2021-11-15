@@ -87,3 +87,50 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+#sidebar.d-flex flex-column flex-shrink-0 p-3 text-white bg-dark {
+
+}
+
+#sidebar {
+  height: 100vh;
+  position: absolute;
+  left: -280px;
+}
+
+#check {
+  display: none;
+}
+
+.btn_one a {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  left: 16px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#sidebar .btn_two a {
+  font-size: 30px;
+  position: absolute;
+  left: 230px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#check:checked ~ #sidebar {
+  left: 0px;
+  transition: left 300ms linear;
+}
+
+#check:checked ~ .btn_one a{
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
+#check:not(:checked) ~ #sidebar {
+  left :-280px;
+  transition: left 300ms linear;
+}
