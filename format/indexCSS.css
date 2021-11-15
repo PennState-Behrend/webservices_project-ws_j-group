@@ -134,3 +134,6 @@ main {
   left :-280px;
   transition: left 300ms linear;
 }
+
+button.link { background:none; border:none; color:blue; }
+button.link:hover {background: #eee; text-decoration: underline}
