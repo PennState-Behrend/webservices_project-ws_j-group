@@ -135,5 +135,17 @@ main {
   transition: left 300ms linear;
 }
 
+.container {
+  position: relative;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  color: #0D6EFD;
+}
+
+.projects_table{
+  background-color: #0D6EFD;
+}
+
 button.link { background:none; border:none; color:blue; }
 button.link:hover {background: #eee; text-decoration: underline}
