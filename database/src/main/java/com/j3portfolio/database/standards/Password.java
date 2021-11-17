@@ -19,4 +19,9 @@ public class Password {
     public void setSaltHash(int saltHash) {
         this.saltHash = saltHash;
     }
+
+    @Override
+    public String toString() {
+        return "PassHash: " + passHash;
+    }
 }
