@@ -94,7 +94,7 @@ main {
 
 #sidebar {
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: -280px;
 }
 
