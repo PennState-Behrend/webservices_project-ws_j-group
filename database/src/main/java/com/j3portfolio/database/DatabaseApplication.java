@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.xml.ws.Endpoint;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @SpringBootApplication
 public class DatabaseApplication {
@@ -13,7 +15,8 @@ public class DatabaseApplication {
     public static void main(String[] args) {
         //SpringApplication.run(DatabaseApplication.class, args);
 
-        DatabaseHandler.TestDatabase();
+
+
         Endpoint.publish(
                 "http://localhost:8080/userservice",
                 new UserServiceImplementation()
