@@ -15,7 +15,7 @@ public interface UserService {
     boolean deleteUser(@WebParam(name = "id") int id);
 
     @WebMethod
-    int addUser(@WebParam(name = "username") String username, @WebParam(name = "password") Password password);
+    int addUser(@WebParam(name = "username") String username, @WebParam(name = "email") String email, @WebParam(name = "password") Password password);
 
     @WebMethod
     boolean updatePassword(@WebParam(name = "id") int id, @WebParam(name = "password") Password password);

@@ -24,7 +24,7 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public int addUser(String username, Password password) {
+    public int addUser(String username, String email, Password password) {
         System.out.println("Username: " + username + ", Password: " + password);
         return -1;
     }
