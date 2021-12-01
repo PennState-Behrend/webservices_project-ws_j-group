@@ -147,5 +147,15 @@ main {
     background-color: #0D6EFD;
 }
 
-button.link { background:none; border:none; color:blue; }
-button.link:hover {background: #eee; text-decoration: underline}
+button.link { background:none; border:none; color:black}
+button.link:hover {background: #eee; color:blue; text-decoration: underline}
+
+.fileIcon{
+    width: 50px;
+    height: 50px;
+}
+
+.folderIcon{
+    width: 50px;
+    height: 50px;
+}
