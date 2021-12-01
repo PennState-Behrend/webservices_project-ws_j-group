@@ -13,14 +13,8 @@ import java.sql.SQLException;
 public class DatabaseApplication {
 
     public static void main(String[] args) {
-        //SpringApplication.run(DatabaseApplication.class, args);
-
-
-
-        Endpoint.publish(
-                "http://localhost:8080/userservice",
-                new UserServiceImplementation()
-        );
+        Endpoint.publish("http://localhost:8080/userservice", new UserServiceImplementation());
+        System.out.println(DatabaseHandler.GetUsersByUsername("Jake"));
     }
 
 }

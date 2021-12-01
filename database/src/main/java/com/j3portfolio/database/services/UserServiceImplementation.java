@@ -2,16 +2,10 @@ package com.j3portfolio.database.services;
 
 import com.j3portfolio.database.standards.Password;
 
-import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService(
-        name = "UserService",
-        endpointInterface = "com.j3portfolio.database.services.UserService",
-        targetNamespace = "http://userservice.services.database.j3portfolio.com/"
-)
+@WebService(name = "UserService", endpointInterface = "com.j3portfolio.database.services.UserService", targetNamespace = "http://userservice.services.database.j3portfolio.com/")
 public class UserServiceImplementation implements UserService {
-
 
     @Override
     public Password getPassword(int id) {
@@ -25,7 +19,6 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public int addUser(String username, String email, Password password) {
-        System.out.println("Username: " + username + ", Password: " + password);
         return -1;
     }
 
