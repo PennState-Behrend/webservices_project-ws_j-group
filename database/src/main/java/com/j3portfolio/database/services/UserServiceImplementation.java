@@ -1,6 +1,8 @@
 package com.j3portfolio.database.services;
 
+import com.j3portfolio.database.handler.DatabaseHandler;
 import com.j3portfolio.database.standards.Password;
+import com.j3portfolio.database.standards.User;
 
 import javax.jws.WebService;
 
@@ -18,8 +20,14 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public int addUser(String username, String email, Password password) {
-        return -1;
+    public int addUser(String email, String username, Password password) {
+        try {
+            return DatabaseHandler.AddUser(new User(username, email, password));
+        } catch (DatabaseHandler.UsernameAlreadyExistsException e) {
+            return -1;
+        } catch (DatabaseHandler.EmailAlreadyExistsException e) {
+            return -2;
+        }
     }
 
     @Override

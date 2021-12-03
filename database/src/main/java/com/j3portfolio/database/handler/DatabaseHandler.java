@@ -8,6 +8,20 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+const soap = require('soap')
+const url = 'http://localhost:8080/userservice?wsdl'
+const pas = {passHash: 'sadfjkhsafdjh', saltHash: 23482734}
+const args = {username: 'User', email: 'User@gmail.com', password: pas}
+
+soap.createClient(url, function(err, client) {
+    client.addUser(args, function(err, result) {
+        console.log(result);
+    })
+})
+
+*/
+
 public class DatabaseHandler {
     private static final String url = "jdbc:sqlite:database.db";
     private static final String baseUserLoginSQL = "SELECT id, username, email, passHash, saltHash FROM UserLogin";
@@ -30,36 +44,41 @@ public class DatabaseHandler {
         return GetUsersByQuery(query).get(0);
     }
 
-    public static boolean AddUser(User user) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
+    public static int AddUser(User user) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
         String username = user.getUsername();
         String email = user.getEmail();
-        String query = "INSERT INTO UserLogin(username, email, passHash, saltHash) VALUES("
-                + username + ", "
-                + email + ", "
-                + user.getPassHash() + ", "
+        String query = "INSERT INTO UserLogin(username, email, passHash, saltHash) VALUES(\'"
+                + username + "\', \'"
+                + email + "\', \'"
+                + user.getPassHash() + "\', "
                 + user.getSaltHash() + ");";
         CheckIfUserExists(username, email);
-        return true;
+        ExecuteQuery(query);
+        User userID = GetUserByExactUsername(username);
+        return userID.getId();
     }
 
     private static void CheckIfUserExists(String username, String email) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
-        String usernameQuery = baseUserLoginSQL + " WHERE username = " + username + ";";
-        String emailQuery = baseUserLoginSQL + " WHERE email = " + email + ";";
-
-        if(ExecuteQuery(usernameQuery) != null)
+        if(GetUserByExactUsername(username) != null)
             throw new UsernameAlreadyExistsException(username);
-        else if(ExecuteQuery(emailQuery) != null)
+        else if(GetUserByExactEmail(email) != null)
             throw new EmailAlreadyExistsException(email);
     }
 
     private static User GetUserByExactUsername(String username) {
-        String query = baseUserLoginSQL + " WHERE username =" + username + ";";
-        return GetUsersByQuery(query).get(0);
+        String query = baseUserLoginSQL + " WHERE username =\'" + username + "\';";
+        List<User> users = GetUsersByQuery(query);
+        if(users != null)
+            return GetUsersByQuery(query).get(0);
+        return null;
     }
 
     private static User GetUserByExactEmail(String email) {
-        String query = baseUserLoginSQL + " WHERE email =" + email + ";";
-        return GetUsersByQuery(query).get(0);
+        String query = baseUserLoginSQL + " WHERE email =\'" + email + "\';";
+        List<User> users = GetUsersByQuery(query);
+        if(users != null)
+            return GetUsersByQuery(query).get(0);
+        return null;
     }
 
     public static List<User> GetUsersByUsername(String username) {

@@ -4,6 +4,8 @@ public class Password {
     private String passHash;
     private int saltHash;
 
+    public Password() {}
+
     public Password(String passHash, int saltHash) {
         this.passHash = passHash;
         this.saltHash = saltHash;
