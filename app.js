@@ -39,6 +39,25 @@ app.get('/settings', (req, res) => { // sending the settings html
   res.sendFile('/static/html/settings.html', {root: __dirname});
 });
 
+passport.use('local', new localStrat(function (username, password, done) {
+  var checkUser = username;
+  var info = userList.find((element) => {
+    if (element.username == checkUser) {
+      return element;
+    }
+  });
+
+  if (info == undefined || info == null) {
+    return done(null, false, {message : 'Incorrect Username'});
+  }
+  if (info.password != password) {
+    return done(null, false, {message : 'Incorrect Password'});
+  }
+  else {
+    return done(null, info);
+  }
+}));
+
 app.post('/signup', (req, res) => {
   res.sendFile(soap.createClient(url, function(err, client) {
     client.addUser(args, function(err, result) {
