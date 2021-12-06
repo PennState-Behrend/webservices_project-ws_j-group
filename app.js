@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var soap = require('soap');
+/*var soap = require('soap');
 var passport = require('passport');
+var userList = [{username : 'admin', password : 'root'}];
+var localStrat = require('passport-local').Strategy;*/
 
 const url = 'http://localhost:8080/userservice?wsdl';
 const pas = {passHash: 'sadfjkhsafdjh', saltHash: 23482734};
@@ -17,7 +19,7 @@ var app = express();
 
 app.use(express.static('static'));
 
-app.use(passport.initialize());
+//app.use(passport.initialize());
 
 app.get('/signin', (req, res) => { // sending the signin html
   res.sendFile('/static/html/signin.html', {root: __dirname});
@@ -39,7 +41,7 @@ app.get('/settings', (req, res) => { // sending the settings html
   res.sendFile('/static/html/settings.html', {root: __dirname});
 });
 
-passport.use('local', new localStrat(function (username, password, done) {
+/*passport.use('local', new localStrat(function (username, password, done) {
   var checkUser = username;
   var info = userList.find((element) => {
     if (element.username == checkUser) {
@@ -64,7 +66,7 @@ app.post('/signup', (req, res) => {
       console.log(result);
     })
   }))
-});
+});*/
 
 //app.post('/signin', );
 
