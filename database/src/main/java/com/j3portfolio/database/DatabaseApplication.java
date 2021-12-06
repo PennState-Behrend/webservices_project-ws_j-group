@@ -14,7 +14,6 @@ public class DatabaseApplication {
 
     public static void main(String[] args) {
         Endpoint.publish("http://localhost:8080/userservice", new UserServiceImplementation());
-        System.out.println(DatabaseHandler.GetUsersByUsername("Jake"));
     }
 
 }

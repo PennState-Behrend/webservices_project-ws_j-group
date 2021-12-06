@@ -58,4 +58,13 @@ public class User {
     public void setSaltHash(int saltHash) {
         this.password.setSaltHash(saltHash);
     }
+
+    public Password getPassword() {
+        return password;
+    }
+
+    @Override
+    public String toString() {
+        return getUsername() + '#' + getId();
+    }
 }
