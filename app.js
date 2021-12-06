@@ -3,6 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var soap = require('soap');
+var passport = require('passport');
+
+const url = 'http://localhost:8080/userservice?wsdl';
+const pas = {passHash: 'sadfjkhsafdjh', saltHash: 23482734};
+const args = {username: 'User', email: 'User@gmail.com', password: pas};
 
 var indexRouter = require('./routes');
 var usersRouter = require('./routes/users');
@@ -10,6 +16,8 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 app.use(express.static('static'));
+
+app.use(passport.initialize());
 
 app.get('/signin', (req, res) => { // sending the signin html
   res.sendFile('/static/html/signin.html', {root: __dirname});
@@ -30,6 +38,16 @@ app.get('/search', (req, res) => { // sending the search html
 app.get('/settings', (req, res) => { // sending the settings html
   res.sendFile('/static/html/settings.html', {root: __dirname});
 });
+
+app.post('/signup', (req, res) => {
+  res.sendFile(soap.createClient(url, function(err, client) {
+    client.addUser(args, function(err, result) {
+      console.log(result);
+    })
+  }))
+});
+
+//app.post('/signin', );
 
 app.listen(3001, () => {
   console.log(`Example app listening at http://localhost:3001`)
