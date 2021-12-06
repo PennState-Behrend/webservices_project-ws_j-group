@@ -20,7 +20,7 @@ app.get('/signup', (req, res) => { // sending the signup html
 });
 
 app.get('/index', (req, res) => { // sending the index html
-  res.sendFile('/static/html/index.html', {root: __dirname});
+  res.sendFile('/static/html/project.html', {root: __dirname});
 });
 
 app.get('/search', (req, res) => { // sending the search html
