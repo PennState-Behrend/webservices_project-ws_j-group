@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+JAVASCRIPT REST SIDE CODE
 const soap = require('soap')
 const url = 'http://localhost:8080/userservice?wsdl'
 const pas = {passHash: 'sadfjkhsafdjh', saltHash: 23482734}
@@ -24,7 +25,7 @@ soap.createClient(url, function(err, client) {
 
 public class DatabaseHandler {
     private static final String url = "jdbc:sqlite:database.db";
-    private static final String baseUserLoginSQL = "SELECT id, username, email, passHash, saltHash FROM UserLogin";
+    private static final String baseUserLoginSQL = "SELECT * FROM UserLogin";
     private static final String baseUserSettingsSQL = "SELECT "; // LATER
     private static final String baseProfileSQL = "SELECT id"; // LATER
 
@@ -32,7 +33,6 @@ public class DatabaseHandler {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(url);
-            System.out.println("Connection established to " + url);
         } catch(SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -41,7 +41,10 @@ public class DatabaseHandler {
 
     public static User GetUserByID(int id) {
         String query = baseUserLoginSQL + " WHERE id = " + id + ";";
-        return GetUsersByQuery(query).get(0);
+        List<User> users = GetUsersByQuery(query);
+        if(users != null)
+            return GetUsersByQuery(query).get(0);
+        return null;
     }
 
     public static int AddUser(User user) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
@@ -118,7 +121,7 @@ public class DatabaseHandler {
             Statement statement = connection.createStatement();
             resultSet = statement.executeQuery(query);
         } catch(SQLException ex) {
-            ex.printStackTrace();
+            // IGNORE (RESULT SET DOES NOT EXIST)
         }
         return resultSet;
     }

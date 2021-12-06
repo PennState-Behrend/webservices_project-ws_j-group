@@ -11,7 +11,10 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public Password getPassword(int id) {
-        return null;
+        User user = DatabaseHandler.GetUserByID(id);
+        if(user != null)
+            return user.getPassword();
+        return new Password("-1", -1);
     }
 
     @Override
