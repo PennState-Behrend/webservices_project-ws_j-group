@@ -1,0 +1,34 @@
+<%- include('header.ejs') %>
+<link href="/stylesheets/searchCSS.css" rel="stylesheet">
+
+<body>
+<div>
+    <img class="logoCenter" src="/images/logo2.svg" alt="" width="150" height="150">
+    <div class="boxContainer">
+        <table class="elementsContainer">
+            <tr>
+                <td>
+                    <input type="text" placeholder="Search" class="search" id="searchID">
+                </td>
+                <td>
+                    <a href="" id="searchBtn">
+                        <i class="material-icons">search</i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+<script>
+    let input = document.getElementById("searchID");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            document.getElementById("searchBtn").click();
+        }
+    });
+</script>
+
+<%- include('footer.ejs') %>

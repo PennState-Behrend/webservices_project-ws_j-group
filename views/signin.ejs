@@ -1,0 +1,32 @@
+<%- include('nonSidebarHeader.ejs') %>
+
+<link href="stylesheets/signon.css" rel="stylesheet">
+
+<body class="text-center">
+
+<main class="form-signin">
+    <formm action="http://localhost:3001/signin" method="POST">
+        <img class="mb-4" src="/images/logo2.svg" alt="" width="150" height="150">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+        <button formaction="signup" class="signup" type="submit">Sign Up</button>
+    </formm>
+</main>
+</body>
+
+<%- include('footer.ejs') %>

@@ -1,0 +1,28 @@
+<%- include('header.ejs') %>
+<link href="/stylesheets/indexCSS.css" rel="stylesheet">
+<canvas id="myChart" height="35"></canvas>
+
+<div class="container"><h2>My Projects</h2></div>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Project Name</th>
+      <th scope="col">Short Description</th>
+      <th scope="col">Date last uploaded</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < projects.length; i++) {%>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><button class="link"><%= projects[i].title %></button></td>
+          <td><%= projects[i].shortDescription %></td>
+          <td><%= projects[i].lastUpdated %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<%- include('footer.ejs') %>
