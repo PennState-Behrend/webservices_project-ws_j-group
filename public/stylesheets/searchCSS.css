@@ -168,9 +168,8 @@ main {
     outline: none;
 }
 
-.material-icons {
-    font-size: 26px;
-    padding-top: 3px;
+#searchBtn {
+    font-size: 22px;
 }
 
 .logoCenter {
