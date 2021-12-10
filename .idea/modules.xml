@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/RestService.iml" filepath="$PROJECT_DIR$/.idea/RestService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/webservices_project-ws_j-group.iml" filepath="$PROJECT_DIR$/.idea/webservices_project-ws_j-group.iml" />
     </modules>
   </component>
 </project>
