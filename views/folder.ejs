@@ -1,0 +1,12 @@
+<body>
+  <% for(var i = 0; i < fileSystem.length; i++) { %>
+    <li>
+      <% if(fileSystem[i].split('.').length === 1) { %>
+        <img src="/images/folder.png" alt="" width="32" height="32">
+      <% } else { %>
+        <img src="/images/file.png" alt="" width="32" height="32">
+      <% } %>
+      <a href="<%= folder %>/<%= fileSystem[i] %>"><%= fileSystem[i] %></a><br>
+    </li>
+  <% } %>
+</body>

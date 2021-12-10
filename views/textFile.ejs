@@ -1,0 +1,17 @@
+<pre class='text'>
+<% for(var i = 0; i < text.length; i++) { %><%= i %>:   <%= text[i].replace('\n', '') %><% } %>
+</pre>
+<style>
+    .text {
+        white-space: pre;
+        font-size: 15px;
+        margin: 0px;
+        font-family: Calibri;
+        line-height: 15px;
+    }
+    .text pre {
+        font-size: 5px;
+        content: "";
+        outline: red;
+    }
+</style>

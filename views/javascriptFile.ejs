@@ -1,0 +1,20 @@
+<body class='text'>
+<pre>
+<% for(var i = 0; i < text.length; i++) { %><%- i %>: <%- text[i] %>
+<% } %>
+</pre>
+</body>
+<style>
+    .text {
+        white-space: unset;
+        font-size: 15px;
+        margin: 0px;
+        font-family: Calibri;
+        line-height: 15px;
+    }
+    .text pre {
+        white-space: pre;
+        tab-size: 4;
+        font-size: inherit;
+    }
+</style>

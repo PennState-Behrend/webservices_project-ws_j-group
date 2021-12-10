@@ -18,7 +18,7 @@ function renderFolder(file, url, res) {
   let files = fs.readdirSync(file);
   if(url.charAt(url.length - 1) == '/')
     url = url.substring(0, url.length - 1)
-  res.render('index', { title: 'Express', folder: url, fileSystem: files});
+  res.render('folder', { title: 'Express', folder: url, fileSystem: files});
 }
 
 const fileTypeList = {
@@ -32,7 +32,7 @@ function FileDispatchFunction(fileType) {
 }
 
 
-router.use('/projects/:userID/:projectID/:file(*)', function(req, res, next) { // Files / Folders Inside Project
+router.use('/:userID/:projectID/:file(*)', function(req, res, next) { // Files / Folders Inside Project
   let userID = req.params.userID;
   let projectID = req.params.projectID;
   let file = req.params.file;
