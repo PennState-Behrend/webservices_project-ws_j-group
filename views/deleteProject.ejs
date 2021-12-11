@@ -1,3 +1,31 @@
 <%- include('header.ejs') %>
 
 <link href="/stylesheets/deleteProject.css" rel="stylesheet">
+<div class="container"><h2>Delete Project(s)</h2></div>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Short Description</th>
+            <th scope="col">Delete?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i = 0; i < projects.length; i++) {%>
+            <tr>
+                <td><%= i + 1 %></td>
+                <td><%= projects[i].title %></td>
+                <td><%= projects[i].shortDescription %></td>
+                <td><input type="checkbox"></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <button class="btn btn-primary">Delete Project(s)</button>
+</div>
+
+<%- include('footer.ejs') %>
