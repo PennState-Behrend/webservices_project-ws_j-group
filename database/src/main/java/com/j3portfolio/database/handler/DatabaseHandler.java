@@ -62,13 +62,13 @@ public class DatabaseHandler {
     }
 
     private static void CheckIfUserExists(String username, String email) throws UsernameAlreadyExistsException, EmailAlreadyExistsException {
-        if(GetUserByExactUsername(username) != null)
+        if(username != null && GetUserByExactUsername(username) != null)
             throw new UsernameAlreadyExistsException(username);
-        else if(GetUserByExactEmail(email) != null)
+        else if(email != null && GetUserByExactEmail(email) != null)
             throw new EmailAlreadyExistsException(email);
     }
 
-    private static User GetUserByExactUsername(String username) {
+    public static User GetUserByExactUsername(String username) {
         String query = baseUserLoginSQL + " WHERE username =\'" + username + "\';";
         List<User> users = GetUsersByQuery(query);
         if(users != null)
@@ -76,7 +76,7 @@ public class DatabaseHandler {
         return null;
     }
 
-    private static User GetUserByExactEmail(String email) {
+    public static User GetUserByExactEmail(String email) {
         String query = baseUserLoginSQL + " WHERE email =\'" + email + "\';";
         List<User> users = GetUsersByQuery(query);
         if(users != null)
@@ -124,6 +124,38 @@ public class DatabaseHandler {
             // IGNORE (RESULT SET DOES NOT EXIST)
         }
         return resultSet;
+    }
+
+    public static void UpdatePassword(int id, Password password) {
+        String query = "UPDATE userLogin SET passHash = ? , saltHash = ? WHERE id = ?";
+        Connection connection = Connect();
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, password.getPassHash());
+            statement.setInt(2, password.getSaltHash());
+            statement.setInt(3, id);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            // IGNORE
+        }
+    }
+
+    public static void UpdateUsername(int id, String username) throws UsernameAlreadyExistsException {
+        try {
+            CheckIfUserExists(username, null);
+        } catch (EmailAlreadyExistsException ex) {
+            // IGNORE Not used
+        }
+        String query = "UPDATE userLogin SET username = ? WHERE id = ?";
+        Connection connection = Connect();
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, username);
+            statement.setInt(2, id);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            // IGNORE
+        }
     }
 
     public static class UsernameAlreadyExistsException extends Exception {

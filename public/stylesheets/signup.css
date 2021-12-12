@@ -64,3 +64,8 @@ body {
 #btnSU {
     margin-top: 0.5em;
 }
+
+.error {
+    background-color: inherit;
+    color: red;
+}

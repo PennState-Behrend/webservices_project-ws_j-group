@@ -134,3 +134,8 @@ main {
     left :-280px;
     transition: left 300ms linear;
 }
+
+.error {
+    background-color: inherit;
+    color: red;
+}

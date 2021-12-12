@@ -1,9 +1,31 @@
 var express = require('express');
+const soap = require("soap");
+const fs = require("fs");
+const path = require("path");
+const url = 'http://localhost:8080/userservice?wsdl'
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('search', { pageTitle: 'search', username: 'Jake', userImage: "/images/logo.png" });
+    if(req.user === undefined)
+        res.redirect('/signin');
+    else {
+        let args = {id: req.user};
+        soap.createClient(url, function(err, client) {
+            client.getUserName(args, function(err, result) {
+                let picture = '/images/logo2.svg';
+                if(fs.existsSync(path.join(__dirname, '../public/users/' + req.user + '/profilePicture.jpg')))
+                    picture = '/users/' + req.user + '/profilePicture.jpg';
+                else if(fs.existsSync(path.join(__dirname, '../public/users/' + req.user + '/profilePicture.png')))
+                    picture = '/users/' + req.user + '/profilePicture.png';
+                let val = result.return;
+                if(val === '-1') // Should never happen
+                    res.redirect('/logout');
+                else
+                    res.render('search', { pageTitle: 'search', username: val, userImage: picture});
+            })
+        })
+    }
 });
 
 module.exports = router;

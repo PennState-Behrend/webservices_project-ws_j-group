@@ -10,6 +10,30 @@ import javax.jws.WebService;
 public class UserServiceImplementation implements UserService {
 
     @Override
+    public User getUserByID(int id) {
+        User user = DatabaseHandler.GetUserByID(id);
+        if(user != null)
+            return user;
+        return new User(-1, "-1", "-1", new Password("-1", -1));
+    }
+
+    @Override
+    public String getUserName(int id) {
+        User user = DatabaseHandler.GetUserByID(id);
+        if(user != null)
+            return user.getUsername();
+        return "-1"; // Should never happen if passport is done correctly
+    }
+
+    @Override
+    public User getUserID(String email) {
+        User user = DatabaseHandler.GetUserByExactEmail(email);
+        if(user != null)
+            return user;
+        return new User(-1, "-1", "-1", new Password("-1", -1));
+    }
+
+    @Override
     public Password getPassword(int id) {
         User user = DatabaseHandler.GetUserByID(id);
         if(user != null)
@@ -35,11 +59,17 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public boolean updatePassword(int id, Password password) {
-        return false;
+        DatabaseHandler.UpdatePassword(id, password);
+        return true;
     }
 
     @Override
     public boolean updateUsername(int id, String username) {
+        try {
+            DatabaseHandler.UpdateUsername(id, username);
+        } catch (DatabaseHandler.UsernameAlreadyExistsException e) {
+            return false;
+        }
         return true;
     }
 }

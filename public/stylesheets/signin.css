@@ -51,3 +51,8 @@ body {
 .signup:hover {
     background-color: #cfcfcf;
 }
+
+.error {
+    background-color: inherit;
+    color: red;
+}

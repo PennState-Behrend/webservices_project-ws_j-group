@@ -20,12 +20,12 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="projects" class="<%= pageTitle == 'projects' ? 'nav-link active' : 'nav-link text-white' %>" aria-current="page">
+            <a href="/projects" class="<%= pageTitle == 'projects' ? 'nav-link active' : 'nav-link text-white' %>" aria-current="page">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#dashboard"/></svg>
                 Projects
             </a>
         <li>
-            <a href="search" class="<%= pageTitle == 'search' ? 'nav-link active' : 'nav-link text-white' %>">
+            <a href="/search" class="<%= pageTitle == 'search' ? 'nav-link active' : 'nav-link text-white' %>">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
                 Search
             </a>
@@ -38,11 +38,11 @@
             <strong><%= username%></strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="createProject">Create Project</a></li>
-            <li><a class="dropdown-item" href="deleteProject">Delete Project</a></li>
-            <li><a class="dropdown-item" href="settings">Settings</a></li>
+            <li><a class="dropdown-item" href="/createProject">Create Project</a></li>
+            <li><a class="dropdown-item" href="/deleteProject">Delete Project</a></li>
+            <li><a class="dropdown-item" href="/settings">Settings</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="">Sign out</a></li>
+            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
         </ul>
     </div>
 </div>

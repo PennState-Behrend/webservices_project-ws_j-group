@@ -24,7 +24,8 @@ function renderFolder(file, url, res) {
 const fileTypeList = {
   'txt': renderTextFile,
   '': renderFolder,
-  'js': renderJavascriptFile
+  'js': renderJavascriptFile,
+  'json': renderJavascriptFile
 };
 
 function FileDispatchFunction(fileType) {
