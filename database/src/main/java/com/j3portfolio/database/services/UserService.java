@@ -6,9 +6,13 @@ import com.j3portfolio.database.standards.User;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.util.List;
 
 @WebService
 public interface UserService {
+    @WebMethod
+    List<User> getSearchListOfUsers(@WebParam(name = "searchTerm") String searchTerm);
+
     @WebMethod
     User getUserByID(@WebParam(name = "id") int id);
 

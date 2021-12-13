@@ -5,9 +5,19 @@ import com.j3portfolio.database.standards.Password;
 import com.j3portfolio.database.standards.User;
 
 import javax.jws.WebService;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebService(name = "UserService", endpointInterface = "com.j3portfolio.database.services.UserService", targetNamespace = "http://userservice.services.database.j3portfolio.com/")
 public class UserServiceImplementation implements UserService {
+
+    @Override
+    public List<User> getSearchListOfUsers(String searchTerm) {
+        List<User> users = DatabaseHandler.GetUsersByUsername(searchTerm);
+        if(users != null)
+            return users;
+        return new ArrayList<User>();
+    }
 
     @Override
     public User getUserByID(int id) {
