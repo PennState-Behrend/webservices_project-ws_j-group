@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a70715-44b2-4b06-a3c1-b13b660fb9fd" name="Changes" comment="Changed name of deleteProjects.ejs in javascript so that sidebar is lit up">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_11_2021_8_11_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_11_2021_8_11_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="a6a70715-44b2-4b06-a3c1-b13b660fb9fd" name="Changes" comment="Added a template for search results">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_47_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_47_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/users/27/userSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/users/28/userSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/users/29/userSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/src/main/java/com/j3portfolio/database/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/com/j3portfolio/database/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/src/main/java/com/j3portfolio/database/services/UserServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/com/j3portfolio/database/services/UserServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/target/classes/com/j3portfolio/database/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/database/target/classes/com/j3portfolio/database/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/target/classes/com/j3portfolio/database/services/UserServiceImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/database/target/classes/com/j3portfolio/database/services/UserServiceImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/searchResult.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/searchResult.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/users/1/projects/1/projectDesc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/users/1/projects/1/temp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/users/26/userSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/search.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/search.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/createProject.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/deleteProject.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/indexCSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/indexCSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/createProject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/deleteProject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/createProject.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/deleteProject.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/projects.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/projects.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

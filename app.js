@@ -11,8 +11,6 @@ var flash = require('connect-flash');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
 var settingsRouter = require('./routes/settings');
-var createProjectRouter = require('./routes/createProject');
-var deleteProjectRouter = require('./routes/deleteProject');
 var signinRouter = require('./routes/signin');
 var signupRouter = require('./routes/signup');
 var projectsRouter = require('./routes/projects');
@@ -52,8 +50,6 @@ passport.deserializeUser(function(user, done) {
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
 app.use('/settings', settingsRouter);
-app.use('/createProject', createProjectRouter);
-app.use('/deleteProject', deleteProjectRouter);
 app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
 app.use('/projects', projectsRouter);
