@@ -33,16 +33,18 @@ router.post('/', function(req, res, next) {
     soap.createClient(url, function(err, client) {
         client.getSearchListOfUsers(args, function(err, result) {
             let newArray = [];
-            result.return.forEach(function(entry) {
-                let picture = '/images/logo2.svg';
-                if(fs.existsSync(path.join(__dirname, '../public/users/' + entry.id + '/profilePicture.jpg')))
-                    picture = '/users/' + entry.id + '/profilePicture.jpg';
-                else if(fs.existsSync(path.join(__dirname, '../public/users/' + entry.id + '/profilePicture.png')))
-                    picture = '/users/' + entry.id + '/profilePicture.png';
-                let files = fs.readdirSync(path.join(__dirname, '../public/users/' + entry.id + '/projects/'))
-                let newArgs = {image: picture, username: entry.username, projectAmt: files.length, projectsURL: '/projects/' + entry.id + '/'};
-                newArray.push(newArgs);
-            })
+            if(result != null) {
+                result.return.forEach(function(entry) {
+                    let picture = '/images/logo2.svg';
+                    if(fs.existsSync(path.join(__dirname, '../public/users/' + entry.id + '/profilePicture.jpg')))
+                        picture = '/users/' + entry.id + '/profilePicture.jpg';
+                    else if(fs.existsSync(path.join(__dirname, '../public/users/' + entry.id + '/profilePicture.png')))
+                        picture = '/users/' + entry.id + '/profilePicture.png';
+                    let files = fs.readdirSync(path.join(__dirname, '../public/users/' + entry.id + '/projects/'))
+                    let newArgs = {image: picture, username: entry.username, projectAmt: files.length, projectsURL: '/projects/' + entry.id + '/'};
+                    newArray.push(newArgs);
+                })
+            }
             res.json(newArray);
         });
     })
