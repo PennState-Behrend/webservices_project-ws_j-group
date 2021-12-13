@@ -1,0 +1,32 @@
+.result {
+    column-count: 3;
+    column-rule-color: #0D6EFD;
+    column-gap: 40px;
+    column-rule-width: 2px;
+    column-rule-style: solid;
+    width: 800px;
+    color: #0D6EFD;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+
+}
+
+.result #pfp #pic {
+    width: 30px;
+    height: 30px;
+}
+
+#name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#projamt {
+    font-style: italic;
+    font-size: 20px;
+}

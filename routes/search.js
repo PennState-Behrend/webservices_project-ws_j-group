@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
                 if(val === '-1') // Should never happen
                     res.redirect('/logout');
                 else
-                    res.render('search', { pageTitle: 'search', username: val, userImage: picture});
+                    res.render('search', { pageTitle: 'search', username: val, userImage: picture, projAmount: 5}); // 5 need to be changed to a variable
             })
         })
     }
