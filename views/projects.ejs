@@ -1,7 +1,10 @@
 <%- include('header.ejs') %>
 <link href="/stylesheets/indexCSS.css" rel="stylesheet">
 
-<button class="btn btn-primary" id="uploadBtn">Upload a Project</button>
+<form action="/projects" method="POST">
+  <input name="fileUpload" type="file" id="ctrl" webkiddirectory directory multiple/>
+  <button class="btn btn-primary" id="uploadBtn" type="submit">Upload</button>
+</form>
 
 <canvas id="myChart" height="35"></canvas>
 
