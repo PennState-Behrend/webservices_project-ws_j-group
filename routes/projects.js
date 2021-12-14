@@ -44,4 +44,8 @@ router.get('/:userID', function(req, res, next) {
     }
 });
 
+router.post('/', function(req, res, next) {
+    res.render('projects', { pageTitle: 'projects', username: val, userImage: picture, projects: projects});
+});
+
 module.exports = router;
