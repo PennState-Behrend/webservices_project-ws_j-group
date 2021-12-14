@@ -173,3 +173,9 @@ button.link:hover {
     top: 4%;
     right: 2%;
 }
+
+#ctrl {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
