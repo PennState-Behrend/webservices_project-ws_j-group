@@ -78,6 +78,8 @@ function IterateProjectNumber(req) {
 }
 
 function GetCurrentProjectNumber() {
+    if(isNaN(currentProjectNumber))
+        return 1;
     return currentProjectNumber;
 }
 

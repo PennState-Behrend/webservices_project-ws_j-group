@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a70715-44b2-4b06-a3c1-b13b660fb9fd" name="Changes" comment="Changed name of deleteProjects.ejs in javascript so that sidebar is lit up">
-      <change afterPath="$PROJECT_DIR$/public/users/21/projects/1/TestFolder/AnotherTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_47_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2021_5_47_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="a6a70715-44b2-4b06-a3c1-b13b660fb9fd" name="Changes" comment="Added 'Some' upload capabilities.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/console-control-strings/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/project.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/projects.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/projects.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +171,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639276895145</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added 'Some' upload capabilities.">
+      <created>1639527890634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1639527890634</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added 'Some' upload capabilities.">
+      <created>1639528071376</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1639528071376</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +216,7 @@
     <MESSAGE value="Added signup page with inputs for email, username, password, and confirm password" />
     <MESSAGE value="Changed port to 3001 and removed Profile option in pop-up box when clicking pfp" />
     <MESSAGE value="Changed name of deleteProjects.ejs in javascript so that sidebar is lit up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed name of deleteProjects.ejs in javascript so that sidebar is lit up" />
+    <MESSAGE value="Added 'Some' upload capabilities." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 'Some' upload capabilities." />
   </component>
 </project>
