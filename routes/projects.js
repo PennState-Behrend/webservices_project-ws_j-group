@@ -3,6 +3,24 @@ var fs = require('fs');
 const path = require("path");
 const soap = require("soap");
 const url = 'http://localhost:8080/userservice?wsdl'
+const multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        fs.mkdirSync(path.join(__dirname, '../public/users/' + req.user + '/projects/' + GetCurrentProjectNumber()), {recursive: true});
+        let json = JSON.stringify({
+            projectTitle:"Test Project " + GetCurrentProjectNumber(),
+            projectDescription:"Test Description",
+            dateUpdated:"Test Updated"
+        });
+        fs.writeFile(path.join(__dirname, '../public/users/' + req.user + '/projects/' + GetCurrentProjectNumber() + '/ProjectDesc.json'), json, 'utf8', function(err, result) {
+            callback(null, path.join(__dirname, '../public/users/' + req.user + '/projects/' + GetCurrentProjectNumber() + '/'));
+        });
+    },
+    filename: function (req, file, callback) {
+        callback(null, file.originalname);
+    }
+});
+const tempUpload = multer({storage: storage, perservePath: true});
 var router = express.Router();
 
 /* GET home page. */
@@ -18,6 +36,7 @@ router.get('/:userID', function(req, res, next) {
     if(req.user === undefined)
         res.redirect('/signin');
     else {
+        IterateProjectNumber(req);
         let userID = req.params.userID;
         let projects = [];
         let files = fs.readdirSync(path.join(__dirname, '../public/users/' + userID + '/projects/'))
@@ -37,15 +56,33 @@ router.get('/:userID', function(req, res, next) {
                 let val = result.return;
                 if(val === '-1') // Should never happen
                     res.redirect('/logout');
-                else
-                    res.render('projects', { pageTitle: 'projects', username: val, userImage: picture, projects: projects});
+                else {
+                    res.render('projects', {
+                        pageTitle: 'projects',
+                        username: val,
+                        userImage: picture,
+                        projects: projects,
+                        isUser: req.user == userID
+                    });
+                }
             })
         })
     }
 });
 
-router.post('/', function(req, res, next) {
-    res.render('projects', { pageTitle: 'projects', username: val, userImage: picture, projects: projects});
+let currentProjectNumber = 0;
+
+function IterateProjectNumber(req) {
+    let files = fs.readdirSync(path.join(__dirname, '../public/users/' + req.user + '/projects/'))
+    currentProjectNumber = parseInt(files[files.length -1]) + 1;
+}
+
+function GetCurrentProjectNumber() {
+    return currentProjectNumber;
+}
+
+router.post('/', tempUpload.array('fileUpload'), function(req, res, next) {
+    res.redirect('/projects');
 });
 
 module.exports = router;

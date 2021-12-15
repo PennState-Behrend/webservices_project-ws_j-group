@@ -29,7 +29,10 @@ const fileTypeList = {
 };
 
 function FileDispatchFunction(fileType) {
-  return fileTypeList[fileType];
+  let renderer = fileTypeList[fileType];
+  if(renderer)
+    return fileTypeList[fileType];
+  return renderJavascriptFile;
 }
 
 

@@ -1,10 +1,13 @@
 <%- include('header.ejs') %>
 <link href="/stylesheets/indexCSS.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<form action="/projects" method="POST">
-  <input name="fileUpload" type="file" id="ctrl" webkiddirectory directory multiple/>
+<% if(locals.isUser != undefined && isUser == true) { %>
+<form action="/projects" method="POST" enctype="multipart/form-data">
+  <input name="fileUpload" type="file" id="ctrl" webkitdirectory directory multiple/>
   <button class="btn btn-primary" id="uploadBtn" type="submit">Upload</button>
 </form>
+<% } %>
 
 <canvas id="myChart" height="35"></canvas>
 
@@ -31,4 +34,5 @@
     </tbody>
   </table>
 </div>
+
 <%- include('footer.ejs') %>

@@ -7,8 +7,7 @@ var logger = require('morgan');
 var passport = require('passport');
 var flash = require('connect-flash');
 
-// var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/index');
 var searchRouter = require('./routes/search');
 var settingsRouter = require('./routes/settings');
 var signinRouter = require('./routes/signin');
@@ -30,8 +29,6 @@ app.use(session({
   saveUninitialized: false
 }));
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -45,14 +42,15 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 })
+app.use('/projects', projectsRouter);
+app.use(express.json({limit: '300gb'}));
+app.use(express.urlencoded({ limit: '300gb', extended: true, parameterLimit: 9999999999999999999 }));
 
-// app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRouter);
 app.use('/search', searchRouter);
 app.use('/settings', settingsRouter);
 app.use('/signin', signinRouter);
 app.use('/signup', signupRouter);
-app.use('/projects', projectsRouter);
 app.use('/project', projectRouter);
 app.use('/logout', logoutRouter);
 
