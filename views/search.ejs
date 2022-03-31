@@ -1,0 +1,114 @@
+<%- include('header.ejs') %>
+<link href="/stylesheets/searchCSS.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="/stylesheets/searchResult.css" rel="stylesheet">
+
+<body>
+<div>
+    <img class="logoCenter" src="/images/logo2.svg" alt="" width="150" height="150">
+    <div class="boxContainer">
+        <table class="elementsContainer">
+            <tr>
+                <td>
+                    <input type="text" placeholder="Search" class="search" id="searchID">
+                </td>
+<!--                <td>-->
+<!--                    <a href="" id="searchBtn">-->
+<!--                        <i class="fa fa-search"></i>-->
+<!--                    </a>-->
+<!--                </td>-->
+            </tr>
+        </table>
+    </div>
+</div>
+<table class="SearchContainer">
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <div class="result">-->
+<!--                <div id="pfp">-->
+<!--                    <img id="pic" src="/images/logo2.svg">-->
+<!--                </div>-->
+<!--                <div id="name">-->
+<!--                    <a>Temp</a>-->
+<!--                </div>-->
+<!--                <div id="projamt">-->
+<!--                    <a>Project Amount: 5</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--    </tr>-->
+</table>
+</body>
+
+<style>
+    .SearchContainer {
+        column-count: 1;
+        column-rule-color: #0D6EFD;
+        column-gap: 40px;
+        column-rule-width: 2px;
+        column-rule-style: solid;
+        width: 800px;
+        color: #0D6EFD;
+        text-align: center;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 60%;
+        /*transform: translateY(-50%);*/
+    }
+    .SearchContainer tr {
+        padding: 20px;
+        margin: 20px;
+        height: 35px;
+    }
+</style>
+
+<script>
+    function CleanSearch() {
+        let container = document.querySelector('.SearchContainer');
+        while(container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    }
+
+    function AddSearchChild(image, username, projectAmt, projectsURL) {
+        let child = document.createElement("tr");
+        child.innerHTML = "<td><div class=\"result\"><div id=\"pfp\"><img id=\"pic\" src=" + image +"></div><div id=\"name\"><a>" + username + "</a></div><div id=\"projamt\"><a href=" + projectsURL + ">Project Amount: " + projectAmt + "</a></div></div></td>"
+        document.querySelector('.SearchContainer').appendChild(child);
+    }
+
+    function Search(str) {
+        if(str === "") {
+            CleanSearch();
+            return;
+        }
+        fetch('search/', {
+            method: 'POST',
+            mode: 'same-origin',
+            body: JSON.stringify({searchTerm: str}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(ret => ret.json()).then(ret => {
+           CleanSearch();
+           ret.forEach(function(entry) {
+               AddSearchChild(entry.image, entry.username, entry.projectAmt, entry.projectsURL);
+           });
+        });
+    }
+
+    $(".boxContainer .search").on("input", function() {
+        Search($(this).val());
+    });
+
+    $(document).ready(function() {
+        if($('#searchID').val() == "")
+            return;
+        Search($('#searchID').val());
+    });
+</script>
+
+<%- include('footer.ejs') %>

@@ -1,0 +1,16 @@
+<link href="/stylesheets/searchResult.css" rel="stylesheet">
+
+<div class="result">
+    <% for(var i = 0; i < 1 /* ----- this variable needs changed ----- */; i++) {%>
+        <div id="pfp">
+            <!-- need to be replaced with a variable for user image, unless we are using a constant pic for everyone -->
+            <img id="pic" src="/images/logo2.svg">
+        </div>
+        <div id="name">
+            <a>Temp<% username %></a>
+        </div>
+        <div id="projamt">
+            <a>Project Amount: <%= projAmount %></a>
+        </div>
+    <% } %>
+</div>

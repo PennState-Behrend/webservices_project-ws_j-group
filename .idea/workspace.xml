@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6a70715-44b2-4b06-a3c1-b13b660fb9fd" name="Changes" comment="Added 'Some' upload capabilities.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/projects.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="20W7l5CGb6YZTbJWeDcMS7lW6VR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\webservices_project-ws_j-group\resources" />
+      <recent name="H:\webservices_project-ws_j-group\format" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="www" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bin/www" working-dir="$PROJECT_DIR$/bin">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.www" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6a70715-44b2-4b06-a3c1-b13b660fb9fd" name="Changes" comment="" />
+      <created>1636148637812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636148637812</updated>
+      <workItem from="1636148638993" duration="182000" />
+      <workItem from="1636224393759" duration="13121000" />
+      <workItem from="1636404465427" duration="5255000" />
+      <workItem from="1636494374075" duration="159000" />
+      <workItem from="1636575883762" duration="6303000" />
+      <workItem from="1636757860665" duration="6000" />
+      <workItem from="1639271429112" duration="473000" />
+      <workItem from="1639272152875" duration="3085000" />
+      <workItem from="1639347013048" duration="714000" />
+      <workItem from="1639347824777" duration="185000" />
+      <workItem from="1639443315190" duration="588000" />
+      <workItem from="1639518508991" duration="642000" />
+    </task>
+    <task id="LOCAL-00001" summary="added open and close to sidebar">
+      <created>1636237922719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636237922719</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added another logo for signin page">
+      <created>1636241546724</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636241546724</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changed the logo shown">
+      <created>1636241563145</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636241563145</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed the transition when opening and closing the sidebar">
+      <created>1636241578230</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636241578230</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created format folder for all css and js files associated with each html doc and moved each appropriately">
+      <created>1636409549718</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409549718</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed the new logo as a png and replaced it with the svg file instead">
+      <created>1636409569331</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409569331</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed the code for the new locations of each css/js file">
+      <created>1636409605911</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409605911</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed formatting of sign up button">
+      <created>1636409639898</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409639898</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added signup page with inputs for email, username, password, and confirm password">
+      <created>1636409730465</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636409730465</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changed port to 3001 and removed Profile option in pop-up box when clicking pfp">
+      <created>1639273270481</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1639273270481</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changed name of deleteProjects.ejs in javascript so that sidebar is lit up">
+      <created>1639276895145</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639276895145</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added 'Some' upload capabilities.">
+      <created>1639527890634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1639527890634</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added 'Some' upload capabilities.">
+      <created>1639528071376</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1639528071376</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added open and close to sidebar" />
+    <MESSAGE value="Added another logo for signin page" />
+    <MESSAGE value="Changed the logo shown" />
+    <MESSAGE value="Fixed the transition when opening and closing the sidebar" />
+    <MESSAGE value="Created format folder for all css and js files associated with each html doc and moved each appropriately" />
+    <MESSAGE value="Removed the new logo as a png and replaced it with the svg file instead" />
+    <MESSAGE value="Changed the code for the new locations of each css/js file" />
+    <MESSAGE value="Fixed formatting of sign up button" />
+    <MESSAGE value="Added signup page with inputs for email, username, password, and confirm password" />
+    <MESSAGE value="Changed port to 3001 and removed Profile option in pop-up box when clicking pfp" />
+    <MESSAGE value="Changed name of deleteProjects.ejs in javascript so that sidebar is lit up" />
+    <MESSAGE value="Added 'Some' upload capabilities." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 'Some' upload capabilities." />
+  </component>
+</project>

@@ -1,0 +1,38 @@
+<%- include('nonSidebarHeader.ejs') %>
+
+<link href="/stylesheets/signup.css" rel="stylesheet">
+
+<body class="text-center">
+<main class="form-signin">
+    <img class="mb-4" src="/images/logo2.svg" alt="" width="150" height="150">
+    <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+    <mark class="error">
+    <% if(locals.error !== undefined) { %>
+        <%= error %>
+    <% } %>
+    </mark>
+    <form action="/signup" method="POST">
+        <div class="form-floating">
+            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="username" type="username" class="form-control" id="floatingUsername" placeholder="">
+            <label for="floatingUsername">Username</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input name="password2" type="password" class="form-control" id="floatingPasswordConfirmation" placeholder="">
+            <label for="floatingPasswordConfirmation">Confirm Password</label>
+        </div>
+
+        <button id="signup" class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+    </form>
+    <a href="signin"><button class="login" type="submit">Login</button></a>
+</main>
+</body>
+
+<%- include('footer.ejs') %>

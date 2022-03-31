@@ -1,0 +1,36 @@
+<%- include('nonSidebarHeader.ejs') %>
+
+<link href="stylesheets/signin.css" rel="stylesheet">
+
+<body class="text-center">
+
+<main class="form-signin">
+    <img class="mb-4" src="/images/logo2.svg" alt="" width="150" height="150">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <mark class="error">
+    <% if(locals.error !== undefined) { %>
+        <%= error %>
+    <% } %>
+    </mark>
+    <form action="/signin" method="POST">
+        <div class="form-floating">
+            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    </form>
+    <a href="signup"><button class="signup" type="submit">Sign Up</button></a>
+</main>
+</body>
+
+<%- include('footer.ejs') %>
